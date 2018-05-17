@@ -1,35 +1,11 @@
 apply plugin: 'com.android.library'
 
-ext {
-    bintrayRepo = 'proswipebutton'
-    bintrayName = 'proswipebutton'
-
-    publishedGroupId = 'in.shadowfax'
-    libraryName = 'proswipebutton'
-    artifact = 'proswipebutton'
-
-    libraryDescription = 'A swipe button with progress indicator for Android'
-
-    siteUrl = 'https://github.com/shadowfaxtech/proSwipeButton'
-    gitUrl = 'https://github.com/shadowfaxtech/proSwipeButton.git'
-
-    libraryVersion = '1.1.1'
-
-    developerId = 'developerId'
-    developerName = 'Ishaan Garg'
-    developerEmail = 'ishaan.garg@shadowfax.in'
-
-    licenseName = 'The MIT License (MIT)'
-    licenseUrl = 'https://opensource.org/licenses/MIT'
-    allLicenses = ["MIT"]
-}
-
 android {
-    compileSdkVersion 26
+    compileSdkVersion 27
 
     defaultConfig {
-        minSdkVersion 15
-        targetSdkVersion 26
+        minSdkVersion 17
+        targetSdkVersion 27
         versionCode 5
         versionName "1.1.1"
         vectorDrawables.useSupportLibrary = true
@@ -46,13 +22,11 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:26.1.0'
-    testCompile 'junit:junit:4.12'
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    testImplementation 'junit:junit:4.12'
 }
 
-apply from: 'https://raw.githubusercontent.com/numetriclabz/jcenter/master/installv.gradle'
-apply from: 'https://raw.githubusercontent.com/numetriclabz/jcenter/master/bintrayv.gradle'
